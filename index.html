@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<HTML>
+
+<HEAD>
+	<link rel="stylesheet" href="style.css">
+	<TITLE>Dynamically add Textbox, Radio, Button in html Form using JavaScript</TITLE>
+</HEAD>
+
+<BODY>
+	<FORM>
+		<H2>Dynamically add element in form.</H2>
+		Select the element and hit Add to add it in form.
+
+		<SELECT name="element">
+			<OPTION value="button">Button</OPTION>
+			<OPTION value="text">Textbox</OPTION>
+			<OPTION value="radio">Radio</OPTION>
+		</SELECT>
+
+		<INPUT type="button" value="Add" onclick="addElement(document.forms[0].element.value)" />
+
+		<table id="myTable">
+			<col width="130">
+			<col width="130">
+			<tr>
+				<td>
+					<input type="image" src="plus.png" id="button0" onclick="clickOnButton(this.id); return false"></input>
+				</td>
+				<td>Row1 cell2</td>
+			</tr>
+		</table>
+		<br>
+	</FORM>
+	<script type="text/javascript" src="table.js"></script>
+</BODY>
+
+</HTML>
