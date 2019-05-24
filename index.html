@@ -9,25 +9,21 @@
 
 <BODY>
 	<FORM>
-		<H2>Dynamically add element in form.</H2>
-		Select the element and hit Add to add it in form.
 
-		<SELECT name="element">
+		<SELECT name="element" style="display: none">
 			<OPTION value="button">Button</OPTION>
 			<OPTION value="text">Textbox</OPTION>
 			<OPTION value="radio">Radio</OPTION>
 		</SELECT>
 
-		<INPUT type="button" value="Add" onclick="addElement(document.forms[0].element.value)" />
-
 		<table id="myTable">
-			<col width="130">
-			<col width="130">
+			<col width="60px">
+			<col width="300px">
 			<tr>
 				<td>
 					<input type="image" src="plus.png" id="button0" onclick="clickOnButton(this.id); return false"></input>
 				</td>
-				<td>Row1 cell2</td>
+				<td>New product</td>
 			</tr>
 		</table>
 		<br>

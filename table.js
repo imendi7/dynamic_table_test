@@ -8,45 +8,29 @@ function addElement(type) {
     i +=1;
 
     //Create an input type dynamically.
-    var element = document.createElement("input");
+    var element1 = document.createElement("input");
+    var element2 = document.createElement("button");
     var button_name = "button" + (i-counter.length)
-    console.log(button_name)
+    var elem_name = "elem" + (i-counter.length)
 
     //Assign different attributes to the element.
 
-    element.setAttribute("id", button_name)
-    element.setAttribute("type", "image")
-    element.setAttribute("onclick", "clickOnButton(this.id); return false")
-    element.setAttribute("src", "plus.png")
+    element1.setAttribute("id", button_name)
+    element1.setAttribute("type", "image")
+    element1.setAttribute("onclick", "clickOnButton(this.id); return false")
+    element1.setAttribute("src", "plus.png")
 
-
-
+    element2.setAttribute("id", elem_name)
+    element2.setAttribute("type", "button")
+    element2.setAttribute("class", "element_button")
+    element2.setAttribute("onclick", "clickOnButton(this.id); return false")
+    element2.innerHTML = "Aaaaaa"
 
     while(j<(i-counter.length)){
         ////////////Bug - it is trying to set attribute minus.png to rows that are already deleted
         document.getElementById("button"+j).setAttribute("src", "minus.png")
         j +=1;
     }
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
-    console.log("aaaaaaaaaaaaaaa")
     
 
     console.log("i-counter.length: " + (i-counter.length))
@@ -55,8 +39,8 @@ function addElement(type) {
     var row = table.insertRow(i-counter.length);
     var cell1 = row.insertCell(0);
     var cell2 = row.insertCell(1);
-    cell1.appendChild(element);
-    cell2.innerHTML = "NEW CELL"+i;
+    cell1.appendChild(element1);
+    cell2.appendChild(element2);
 
 
     //Append the element in page (in span).
@@ -79,11 +63,16 @@ function clickOnButton(clicked_id){
 
 function removeElement(clicked_id) {
 
-    var k = 0;
-    var u = 0;
 
     idx = parseInt(clicked_id.slice(6,clicked_id.length));
 
+    console.log("index: ",idx)
+
+    document.getElementById("myTable").rows[idx].style.display = "none";
+
+    console.log(document.getElementById("myTable").rows[idx].style.display)
+
+    /*
     counter.push(idx)
     
     while (k<idx){
@@ -95,6 +84,7 @@ function removeElement(clicked_id) {
 
     var table = document.getElementById("myTable");
     var row = table.deleteRow(idx-u);
+    */
 
     return false;
 };

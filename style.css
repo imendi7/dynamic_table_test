@@ -1,12 +1,20 @@
 table{
-    border: 1px solid black;
+    border: 1px solid #9F7769;
+    border-collapse: collapse
   }
 
-td {
-    width:30px;
-    border: 1px solid black;
+td, tr {
+    color: #9F7769;
+    font-size: 40px;
+    height: 49px
   }
+.element_button{
+  background: none;
+  border: none;
+  color: #9F7769;
+  font-size: 40px 
 
+}
 
 
 .table_btn {
